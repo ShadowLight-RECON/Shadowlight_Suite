@@ -1,0 +1,1 @@
+javascript /** @type {import('tailwindcss').Config} */ export default { content: [ "./index.html", "./src/**/*.{js,ts,jsx,tsx}", ], theme: { extend: { colors: { 'obsidian': '#0e0e0e', 'shadow-purple': '#8f00ff', 'tactical-bg': '#131313', }, fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'inter': ['Inter', 'sans-serif'], }, }, }, plugins: [], }
