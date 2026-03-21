@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shadowlight Elite - PACKAGE_JSON_SYNC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-primary": "#8600ef",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed": "#f9d8ff",
+                        "on-primary-container": "#efddff",
+                        "surface-variant": "#353534",
+                        "outline-variant": "#4d4356",
+                        "secondary-fixed-dim": "#edb1ff",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#cfc2d9",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#75009d",
+                        "on-secondary": "#530070",
+                        "surface": "#131313",
+                        "on-tertiary": "#590062",
+                        "secondary-container": "#b804f4",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#dab9ff",
+                        "tertiary-container": "#b000c2",
+                        "tertiary-fixed": "#ffd6fb",
+                        "outline": "#988ca2",
+                        "on-error": "#690005",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed-variant": "#7d008b",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#36003d",
+                        "on-secondary-container": "#fff6fc",
+                        "tertiary": "#ffa9ff",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#8f00ff",
+                        "on-secondary-fixed": "#320046",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#ffa9ff",
+                        "surface-tint": "#dab9ff",
+                        "on-tertiary-container": "#ffd8fa",
+                        "on-primary-fixed": "#2b0053",
+                        "primary": "#dab9ff",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#6500b8",
+                        "on-primary": "#470083",
+                        "surface-bright": "#393939",
+                        "secondary": "#edb1ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed": "#efdbff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .terminal-glow {
+            box-shadow: 0 0 40px rgba(143, 0, 255, 0.08);
+        }
+        .step-gradient {
+            background: linear-gradient(180deg, rgba(143, 0, 255, 0.1) 0%, rgba(19, 19, 19, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-6 h-16 bg-[#131313]/80 backdrop-blur-md border-b border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#dab9ff]" data-icon="terminal">terminal</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#dab9ff] font-bold">SHADOWLIGHT_SETUP</h1>
+</div>
+<div class="ml-auto flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter text-[#393939] hover:text-[#dab9ff] transition-colors cursor-pointer">Terminal</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter text-[#393939] hover:text-[#dab9ff] transition-colors cursor-pointer">Docs</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter text-[#dab9ff] transition-colors cursor-pointer">Scripts</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter text-[#393939] hover:text-[#dab9ff] transition-colors cursor-pointer">Status</span>
+</nav>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Sidebar / Visual Guide -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-6 rounded-lg border-l-2 border-primary-container relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="description">description</span>
+</div>
+<h2 class="font-headline text-2xl font-bold text-primary mb-2">PACKAGE_JSON_SYNC</h2>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed opacity-80 mb-6">Execute the following deployment sequence to synchronize your tactical local environment with the remote root repository.</p>
+<div class="space-y-4">
+<!-- Steps -->
+<div class="flex gap-4 items-start group">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-primary font-headline font-bold text-xs flex-shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">1</div>
+<div class="flex-1">
+<p class="text-xs font-label uppercase tracking-wider text-on-surface mb-1">Navigation</p>
+<p class="text-sm text-on-surface-variant">Select <span class="text-primary font-mono bg-white/5 px-1">'package.json'</span> screen in your local project workspace.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start group">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-primary font-headline font-bold text-xs flex-shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">2</div>
+<div class="flex-1">
+<p class="text-xs font-label uppercase tracking-wider text-on-surface mb-1">Action</p>
+<p class="text-sm text-on-surface-variant">Click <span class="inline-flex items-center gap-1 text-primary-fixed-dim border border-primary/20 px-2 py-0.5 rounded text-[10px]"><span class="material-symbols-outlined text-xs" data-icon="code">code</span> View Code</span></p>
+</div>
+</div>
+<div class="flex gap-4 items-start group">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-primary font-headline font-bold text-xs flex-shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">3</div>
+<div class="flex-1">
+<p class="text-xs font-label uppercase tracking-wider text-on-surface mb-1">Remote Root</p>
+<p class="text-sm text-on-surface-variant">In GitHub root, Create New File named <span class="text-primary font-mono bg-white/5 px-1">'package.json'</span>.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start group">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-primary font-headline font-bold text-xs flex-shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">4</div>
+<div class="flex-1">
+<p class="text-xs font-label uppercase tracking-wider text-on-surface mb-1">Finalize</p>
+<p class="text-sm text-on-surface-variant">Paste the terminal output below and Commit changes to the main branch.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tactical Status Chip Grid -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container p-4 rounded-lg flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-[#00FF41] shadow-[0_0_8px_#00FF41]"></span>
+<span class="text-[10px] font-label uppercase text-on-surface-variant">Sync Ready</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#8f00ff]"></span>
+<span class="text-[10px] font-label uppercase text-on-surface-variant">Encrypted</span>
+</div>
+</div>
+</div>
+<!-- Terminal Output -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-lg border border-white/5 overflow-hidden terminal-glow">
+<!-- Terminal Header -->
+<div class="bg-surface-container-highest px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-outline/40"></div>
+<div class="w-3 h-3 rounded-full bg-primary/40"></div>
+</div>
+<span class="ml-4 text-[10px] font-mono text-outline uppercase tracking-widest">root@shadowlight:~/package.json</span>
+</div>
+<button class="text-primary hover:text-white transition-colors flex items-center gap-2 px-3 py-1 rounded bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Copy Code</span>
+</button>
+</div>
+<!-- Terminal Body -->
+<div class="p-8 font-mono text-sm leading-relaxed overflow-x-auto">
+<pre class="text-on-surface-variant"><span class="text-primary">{</span>
+  <span class="text-tertiary">"name"</span>: <span class="text-secondary">"shadowlight-elite-hud"</span>,
+  <span class="text-tertiary">"version"</span>: <span class="text-secondary">"2.4.0-tactical"</span>,
+  <span class="text-tertiary">"private"</span>: <span class="text-primary">true</span>,
+  <span class="text-tertiary">"scripts"</span>: <span class="text-primary">{</span>
+    <span class="text-tertiary">"dev"</span>: <span class="text-secondary">"next dev"</span>,
+    <span class="text-tertiary">"build"</span>: <span class="text-secondary">"next build"</span>,
+    <span class="text-tertiary">"start"</span>: <span class="text-secondary">"next start"</span>,
+    <span class="text-tertiary">"lint"</span>: <span class="text-secondary">"next lint"</span>,
+    <span class="text-tertiary">"analyze"</span>: <span class="text-secondary">"shadowlight-scanner --deep"</span>
+  <span class="text-primary">}</span>,
+  <span class="text-tertiary">"dependencies"</span>: <span class="text-primary">{</span>
+    <span class="text-tertiary">"next"</span>: <span class="text-secondary">"14.1.0"</span>,
+    <span class="text-tertiary">"react"</span>: <span class="text-secondary">"18.2.0"</span>,
+    <span class="text-tertiary">"framer-motion"</span>: <span class="text-secondary">"^11.0.3"</span>,
+    <span class="text-tertiary">"lucide-react"</span>: <span class="text-secondary">"^0.323.0"</span>,
+    <span class="text-tertiary">"shadowlight-ui"</span>: <span class="text-secondary">"latest"</span>
+  <span class="text-primary">}</span>,
+  <span class="text-tertiary">"devDependencies"</span>: <span class="text-primary">{</span>
+    <span class="text-tertiary">"tailwindcss"</span>: <span class="text-secondary">"^3.4.1"</span>,
+    <span class="text-tertiary">"typescript"</span>: <span class="text-secondary">"^5.3.3"</span>
+  <span class="text-primary">}</span>
+<span class="text-primary">}</span></pre>
+</div>
+<!-- Terminal Footer -->
+<div class="bg-surface-container-low/50 px-6 py-4 flex items-center border-t border-white/5">
+<div class="flex-1 flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-[9px] uppercase text-outline font-label">Lines</span>
+<span class="text-xs text-on-surface font-headline font-bold">24</span>
+</div>
+<div class="w-px h-6 bg-white/10"></div>
+<div class="flex flex-col">
+<span class="text-[9px] uppercase text-outline font-label">Language</span>
+<span class="text-xs text-on-surface font-headline font-bold">JSON</span>
+</div>
+<div class="w-px h-6 bg-white/10"></div>
+<div class="flex flex-col">
+<span class="text-[9px] uppercase text-outline font-label">Encoding</span>
+<span class="text-xs text-on-surface font-headline font-bold">UTF-8</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-tertiary font-label uppercase animate-pulse">Ready for commit</span>
+</div>
+</div>
+</div>
+<!-- Asymmetric Info Panel -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-high p-6 rounded-lg relative overflow-hidden">
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<img alt="Abstract cyberpunk grid pattern" class="w-full h-full object-cover" data-alt="Abstract purple tactical grid pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN5ET9XD1t_tWSNqaFKhVzsrqP2UShkI7_oGelqvmgewR5pa_G1ZiLKD_PqJlTdZdD59JJuh_4RMpcQyaQCnYbSm9nsB34_zVEd1as_MTXT8FfwGQehhWugGJfUUhvvkB_tEIPhgnGnXoWPz5H4m9eqkIcDKB-3gE0-x8yVksUDPVUMKgdXtXkcLqlZU2Q387Y0nJ4Iu2RSD-yiIzIy6BB6q1QdyPcrJZF3mkCYo3aMVYyOMWAgJ6kE9Ipvx145zUPt5tPotIpaCw"/>
+</div>
+<h3 class="text-primary font-headline font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                        COMMIT_VALIDATION
+                    </h3>
+<p class="text-xs text-on-surface-variant leading-relaxed opacity-70">
+                        Ensure the file is placed precisely in the root directory. Placing <span class="text-secondary">package.json</span> in a subdirectory will disrupt the Shadowlight build pipeline. All scripts are pre-validated for high-concurrency environments.
+                    </p>
+</div>
+<div class="border border-outline-variant/20 p-6 rounded-lg flex flex-col justify-center">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">Build Priority</span>
+<span class="text-xs font-bold text-primary">ULTRA_HIGH</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-secondary h-full w-[92%]"></div>
+</div>
+<div class="mt-4 flex justify-between items-end">
+<p class="text-[10px] text-on-surface-variant max-w-[150px]">Automation sequence status: Awaiting user manual input.</p>
+<span class="material-symbols-outlined text-primary/30 text-3xl" data-icon="rebase_edit">rebase_edit</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#0e0e0e]/90 backdrop-blur-lg border-t border-white/5 z-50 md:hidden">
+<div class="flex flex-col items-center justify-center text-[#393939] py-1 px-3 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Terminal</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#393939] py-1 px-3 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Docs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#dab9ff] bg-[#8f00ff]/10 rounded-lg py-1 px-3 transition-all">
+<span class="material-symbols-outlined" data-icon="rebase_edit">rebase_edit</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Scripts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#393939] py-1 px-3 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Status</span>
+</div>
+</nav>
+</body></html>
